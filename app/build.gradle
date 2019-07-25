@@ -4,7 +4,6 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 
-apply plugin: 'io.fabric'
 
 android {
     compileSdkVersion 28
@@ -40,7 +39,4 @@ dependencies {
     implementation 'com.afollestad.material-dialogs:core:0.9.6.0'
     implementation 'com.afollestad.material-dialogs:commons:0.9.6.0'
 
-    implementation 'com.google.firebase:firebase-core:16.0.9'
-    implementation 'com.crashlytics.sdk.android:crashlytics:2.10.1'
 }
-apply plugin: 'com.google.gms.google-services'

@@ -1,14 +1,11 @@
 package com.eonreality.pdf
 
 import android.app.DownloadManager
-import android.app.ProgressDialog
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
-import android.content.IntentFilter
 import android.graphics.Typeface
 import android.net.Uri
-import android.os.AsyncTask
 import android.os.Bundle
 import android.os.Environment
 import android.support.v4.content.ContextCompat
@@ -18,8 +15,6 @@ import android.util.Log
 import android.widget.Button
 import android.widget.Toast
 import com.afollestad.materialdialogs.MaterialDialog
-import com.crashlytics.android.Crashlytics
-import io.fabric.sdk.android.Fabric
 import java.io.File
 
 
@@ -29,20 +24,17 @@ class MainActivity : AppCompatActivity() {
 
     private var onDownloadComplte:BroadcastReceiver? = null
 
-    private lateinit var progressDialog:ProgressDialog
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        Fabric.with(this,Crashlytics())
         loadingDialog = getLoadingDialog("Downloading")
 
         val download = findViewById<Button>(R.id.download)
         download.setOnClickListener {
-//            if(!loadingDialog.isShowing) loadingDialog.show()
-//            downloadTest()
-            Crashlytics.getInstance().crash()
+            if(!loadingDialog.isShowing) loadingDialog.show()
+            downloadTest()
         }
 
     }
